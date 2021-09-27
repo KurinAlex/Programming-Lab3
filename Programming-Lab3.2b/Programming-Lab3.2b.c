@@ -3,8 +3,8 @@
 int main()
 {
 	int n;
-	float x;
-	float P = 1.0;
+	double x;
+	double P = 1.0;
 
 	printf("Enter size of number sequence:\n");
 	scanf_s("%d", &n);
@@ -14,7 +14,7 @@ int main()
 		while (1)
 		{
 			printf("Enter x%d:\n", i + 1);
-			scanf_s("%f", &x);
+			scanf_s("%lf", &x);
 			if (x != 1.0)
 			{
 				P *= x * x / (1.0 - x);
