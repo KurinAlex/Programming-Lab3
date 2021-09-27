@@ -17,7 +17,7 @@ int main()
 		P *= (float)(m - i) / (i + 1);
 	}
 
-	printf("P = %.0f", P);
+	printf("P = %d", (int)P);
 
 	getch();
 }
