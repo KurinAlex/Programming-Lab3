@@ -17,7 +17,7 @@ void OutputS(double x, double eps)
 		n++;
 	}
 
-	printf("s = %f n = %d eps = %f\n", s, n, eps);
+	printf("s = %lf n = %d eps = %lf\n", s, n, eps);
 }
 
 int main()
@@ -25,7 +25,7 @@ int main()
 	double x;
 
 	printf("Enter x:\n");
-	scanf_s("%f", &x);
+	scanf_s("%lf", &x);
 
 	if (fabs(x) < 1.0)
 	{
