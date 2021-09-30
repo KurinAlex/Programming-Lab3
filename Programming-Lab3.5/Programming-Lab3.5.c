@@ -4,10 +4,10 @@
 #define EPS1 0.001
 #define EPS2 0.0001
 
-float OutputS(float x, float eps)
+void OutputS(double x, double eps)
 {
-	float s = 1;
-	float add = 1;
+	double s = 1;
+	double add = 1;
 	int n = 1;
 
 	while (fabs(add) > eps)
@@ -22,7 +22,7 @@ float OutputS(float x, float eps)
 
 int main()
 {
-	float x;
+	double x;
 
 	printf("Enter x:\n");
 	scanf_s("%f", &x);
