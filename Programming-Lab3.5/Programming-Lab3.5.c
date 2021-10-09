@@ -29,7 +29,7 @@ int main()
 
 	while (fabs(add) > eps)
 	{
-		add *= (3.0 / (4.0 * n) - 1.0) * x;
+		add *= (0.75 / n - 1.0) * x;
 		s += add;
 		n++;
 	}
