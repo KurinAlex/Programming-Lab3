@@ -1,13 +1,30 @@
 ﻿#include <stdio.h>
 #include <math.h>
 
-#define EPS1 0.001
-#define EPS2 0.0001
-
-void OutputS(double x, double eps)
+EnterDouble(double* num, const char* number_name)
 {
-	double s = 1;
-	double add = 1;
+	printf("Enter %s:", number_name);
+	scanf_s("%lf", num);
+}
+
+int main()
+{
+	double x;
+	printf("x must be in range (-1,1)\n");
+	do
+	{
+		EnterDouble(&x, "x");
+	} while (fabs(x) >= 1);
+
+	double eps;
+	printf("eps must be in range (0,1)\n");
+	do
+	{
+		EnterDouble(&eps, "eps");
+	} while (eps <= 0.0 || eps >= 1.0);
+
+	double s = 1.0;
+	double add = 1.0;
 	int n = 1;
 
 	while (fabs(add) > eps)
@@ -18,24 +35,7 @@ void OutputS(double x, double eps)
 	}
 
 	printf("s = %lf n = %d eps = %lf\n", s, n, eps);
-}
-
-int main()
-{
-	double x;
-
-	printf("Enter x:\n");
-	scanf_s("%lf", &x);
-
-	if (fabs(x) < 1.0)
-	{
-		OutputS(x, EPS1);
-		OutputS(x, EPS2);
-	}
-	else
-	{
-		printf("x must be in range (-1,1)\n");
-	}
 
 	getch();
+	return 0;
 }
